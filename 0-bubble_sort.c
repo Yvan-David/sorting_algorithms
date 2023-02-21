@@ -7,7 +7,8 @@
 */
 void bubble_sort(int *array, size_t size)
 {
-int i, j, hold;
+unsigned long int i, j, hold;
+int status = 0;
 for (j = 0; j < size - 1; j++)
 {
 for (i = 0; i < size - 1 - j; i++)
@@ -18,8 +19,11 @@ hold = array[i];
 array[i] = array[i + 1];
 array[i + 1] = hold;
 print_array(array, size);
+status = 1;
 }
 
 }
+if (status == 0)
+break;
 }
 }
